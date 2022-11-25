@@ -7,7 +7,7 @@
  # Description
  <center>
 
- [ The spline-window method is presented step by step using a simulated set of 200 markers across a chromosome region. (A) Raw data (F_ST ) computed from individual markers. (B) A cubic smoothing spline indicated by the red line, is fitted to the data. (C) Inflection points of the spline are indicated by dashed vertical lines. (D) Inflection points of the spline are used to define window boundaries, and a statistic such as W ("window stat") is computed.](12711_2015_105_Fig1_HTML.webp)
+ [ The spline-window method is presented step by step using a simulated set of 200 markers across a chromosome region. (A) Raw data (F_ST ) computed from individual markers. (B) A cubic smoothing spline indicated by the red line, is fitted to the data. (C) Inflection points of the spline are indicated by dashed vertical lines. (D) Inflection points of the spline are used to define window boundaries, and a statistic such as W ("window stat") is computed.](12711_2015_105_Fig1_HTML.png)
  
  </center>
  
