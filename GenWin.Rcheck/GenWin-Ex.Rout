@@ -1,0 +1,85 @@
+
+R version 4.1.1 (2021-08-10) -- "Kick Things"
+Copyright (C) 2021 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin17.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "GenWin"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> base::assign(".ExTimings", "GenWin-Ex.timings", pos = 'CheckExEnv')
+> base::cat("name\tuser\tsystem\telapsed\n", file=base::get(".ExTimings", pos = 'CheckExEnv'))
+> base::assign(".format_ptime",
++ function(x) {
++   if(!is.na(x[4L])) x[1L] <- x[1L] + x[4L]
++   if(!is.na(x[5L])) x[2L] <- x[2L] + x[5L]
++   options(OutDec = '.')
++   format(x[1L:3L], digits = 7L)
++ },
++ pos = 'CheckExEnv')
+> 
+> ### * </HEADER>
+> library('GenWin')
+> 
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("splineAnalyze")
+> ### * splineAnalyze
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: splineAnalyze
+> ### Title: Spline-based window analysis
+> ### Aliases: splineAnalyze
+> 
+> ### ** Examples
+> 
+> 
+> data(chr6)
+> sub6 <- chr6[55000:63000,]
+> chr6Spline <- splineAnalyze(Y=sub6$Fst,map=sub6$Position,smoothness=100,
++ plotRaw=TRUE,plotWindows=TRUE,method=4)
+[1] "Total number of windows =  472"
+[1] " ---- Computing window statistics ----"
+1 of 472 2 of 472 3 of 472 4 of 472 5 of 472 6 of 472 7 of 472 8 of 472 9 of 472 10 of 472 11 of 472 12 of 472 13 of 472 14 of 472 15 of 472 16 of 472 17 of 472 18 of 472 19 of 472 20 of 472 21 of 472 22 of 472 23 of 472 24 of 472 25 of 472 26 of 472 27 of 472 28 of 472 29 of 472 30 of 472 31 of 472 32 of 472 33 of 472 34 of 472 35 of 472 36 of 472 37 of 472 38 of 472 39 of 472 40 of 472 41 of 472 42 of 472 43 of 472 44 of 472 45 of 472 46 of 472 47 of 472 48 of 472 49 of 472 50 of 472 51 of 472 52 of 472 53 of 472 54 of 472 55 of 472 56 of 472 57 of 472 58 of 472 59 of 472 60 of 472 61 of 472 62 of 472 63 of 472 64 of 472 65 of 472 66 of 472 67 of 472 68 of 472 69 of 472 70 of 472 71 of 472 72 of 472 73 of 472 74 of 472 75 of 472 76 of 472 77 of 472 78 of 472 79 of 472 80 of 472 81 of 472 82 of 472 83 of 472 84 of 472 85 of 472 86 of 472 87 of 472 88 of 472 89 of 472 90 of 472 91 of 472 92 of 472 93 of 472 94 of 472 95 of 472 96 of 472 97 of 472 98 of 472 99 of 472 100 of 472 101 of 472 102 of 472 103 of 472 104 of 472 105 of 472 106 of 472 107 of 472 108 of 472 109 of 472 110 of 472 111 of 472 112 of 472 113 of 472 114 of 472 115 of 472 116 of 472 117 of 472 118 of 472 119 of 472 120 of 472 121 of 472 122 of 472 123 of 472 124 of 472 125 of 472 126 of 472 127 of 472 128 of 472 129 of 472 130 of 472 131 of 472 132 of 472 133 of 472 134 of 472 135 of 472 136 of 472 137 of 472 138 of 472 139 of 472 140 of 472 141 of 472 142 of 472 143 of 472 144 of 472 145 of 472 146 of 472 147 of 472 148 of 472 149 of 472 150 of 472 151 of 472 152 of 472 153 of 472 154 of 472 155 of 472 156 of 472 157 of 472 158 of 472 159 of 472 160 of 472 161 of 472 162 of 472 163 of 472 164 of 472 165 of 472 166 of 472 167 of 472 168 of 472 169 of 472 170 of 472 171 of 472 172 of 472 173 of 472 174 of 472 175 of 472 176 of 472 177 of 472 178 of 472 179 of 472 180 of 472 181 of 472 182 of 472 183 of 472 184 of 472 185 of 472 186 of 472 187 of 472 188 of 472 189 of 472 190 of 472 191 of 472 192 of 472 193 of 472 194 of 472 195 of 472 196 of 472 197 of 472 198 of 472 199 of 472 200 of 472 201 of 472 202 of 472 203 of 472 204 of 472 205 of 472 206 of 472 207 of 472 208 of 472 209 of 472 210 of 472 211 of 472 212 of 472 213 of 472 214 of 472 215 of 472 216 of 472 217 of 472 218 of 472 219 of 472 220 of 472 221 of 472 222 of 472 223 of 472 224 of 472 225 of 472 226 of 472 227 of 472 228 of 472 229 of 472 230 of 472 231 of 472 232 of 472 233 of 472 234 of 472 235 of 472 236 of 472 237 of 472 238 of 472 239 of 472 240 of 472 241 of 472 242 of 472 243 of 472 244 of 472 245 of 472 246 of 472 247 of 472 248 of 472 249 of 472 250 of 472 251 of 472 252 of 472 253 of 472 254 of 472 255 of 472 256 of 472 257 of 472 258 of 472 259 of 472 260 of 472 261 of 472 262 of 472 263 of 472 264 of 472 265 of 472 266 of 472 267 of 472 268 of 472 269 of 472 270 of 472 271 of 472 272 of 472 273 of 472 274 of 472 275 of 472 276 of 472 277 of 472 278 of 472 279 of 472 280 of 472 281 of 472 282 of 472 283 of 472 284 of 472 285 of 472 286 of 472 287 of 472 288 of 472 289 of 472 290 of 472 291 of 472 292 of 472 293 of 472 294 of 472 295 of 472 296 of 472 297 of 472 298 of 472 299 of 472 300 of 472 301 of 472 302 of 472 303 of 472 304 of 472 305 of 472 306 of 472 307 of 472 308 of 472 309 of 472 310 of 472 311 of 472 312 of 472 313 of 472 314 of 472 315 of 472 316 of 472 317 of 472 318 of 472 319 of 472 320 of 472 321 of 472 322 of 472 323 of 472 324 of 472 325 of 472 326 of 472 327 of 472 328 of 472 329 of 472 330 of 472 331 of 472 332 of 472 333 of 472 334 of 472 335 of 472 336 of 472 337 of 472 338 of 472 339 of 472 340 of 472 341 of 472 342 of 472 343 of 472 344 of 472 345 of 472 346 of 472 347 of 472 348 of 472 349 of 472 350 of 472 351 of 472 352 of 472 353 of 472 354 of 472 355 of 472 356 of 472 357 of 472 358 of 472 359 of 472 360 of 472 361 of 472 362 of 472 363 of 472 364 of 472 365 of 472 366 of 472 367 of 472 368 of 472 369 of 472 370 of 472 371 of 472 372 of 472 373 of 472 374 of 472 375 of 472 376 of 472 377 of 472 378 of 472 379 of 472 380 of 472 381 of 472 382 of 472 383 of 472 384 of 472 385 of 472 386 of 472 387 of 472 388 of 472 389 of 472 390 of 472 391 of 472 392 of 472 393 of 472 394 of 472 395 of 472 396 of 472 397 of 472 398 of 472 399 of 472 400 of 472 401 of 472 402 of 472 403 of 472 404 of 472 405 of 472 406 of 472 407 of 472 408 of 472 409 of 472 410 of 472 411 of 472 412 of 472 413 of 472 414 of 472 415 of 472 416 of 472 417 of 472 418 of 472 419 of 472 420 of 472 421 of 472 422 of 472 423 of 472 424 of 472 425 of 472 426 of 472 427 of 472 428 of 472 429 of 472 430 of 472 431 of 472 432 of 472 433 of 472 434 of 472 435 of 472 436 of 472 437 of 472 438 of 472 439 of 472 440 of 472 441 of 472 442 of 472 443 of 472 444 of 472 445 of 472 446 of 472 447 of 472 448 of 472 449 of 472 450 of 472 451 of 472 452 of 472 453 of 472 454 of 472 455 of 472 456 of 472 457 of 472 458 of 472 459 of 472 460 of 472 461 of 472 462 of 472 463 of 472 464 of 472 465 of 472 466 of 472 467 of 472 468 of 472 469 of 472 470 of 472 471 of 472 472 of 472 [1] " ---- done ---- "
+> 
+> ## Not run: 
+> ##D chr6Spline <- splineAnalyze(Y=chr6$Fst,map=chr6$Position,smoothness=100,
+> ##D plotRaw=TRUE,plotWindows=TRUE,method=4)
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("splineAnalyze", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> ### * <FOOTER>
+> ###
+> cleanEx()
+> options(digits = 7L)
+> base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  0.533 0.07 0.614 0 0 
+> grDevices::dev.off()
+null device 
+          1 
+> ###
+> ### Local variables: ***
+> ### mode: outline-minor ***
+> ### outline-regexp: "\\(> \\)?### [*]+" ***
+> ### End: ***
+> quit('no')
